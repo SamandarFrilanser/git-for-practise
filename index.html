@@ -7,13 +7,46 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Hello world</h1>
-    <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio ullam nihil, voluptatem illum iusto amet quis beatae fuga fugit magni et earum atque fugiat sed?
-    </p>
-    <p class="txt">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate facere quia similique eius ducimus! Vero.
-    </p>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#">Ishchi <span class="accent">Stol</span></a>
+
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a class="btn-primary" href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to Ishchi Stol</h1>
+                <p>Modern responsive navbar implemented.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        (function(){
+            const btn = document.querySelector('.nav-toggle');
+            const nav = document.querySelector('.nav');
+            btn.addEventListener('click', function(){
+                const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+                this.setAttribute('aria-expanded', !expanded);
+                nav.classList.toggle('open');
+            });
+        })();
+    </script>
 </body>
 </html>
 
